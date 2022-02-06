@@ -1,0 +1,62 @@
+<html>
+    <head>
+         <link rel="stylesheet" href="style.css">
+        <body style="background-color: darkolivegreen;">
+
+            <div style="width: 100%; height: 100%;">
+                <div style="margin: 5px; width: 100%; height: 20%; " style=" color: white; font-family: Georgia, 'Times New Roman', Times, serif;">
+                    
+                    <div style="margin: 5px; width: 100%; height: 20%; ">
+                        <button  style="margin: 5px; height: 100%; width: 150px; float: right;" onclick="redirect()" >Login</button>
+                    </div>
+                    <div style="margin: 5px; width: 100%; height: 80%; ">
+                        <div style="margin: 5px; flex-direction: row; width: 100%; height: 100%; background-color: darkolivegreen;">
+                            <p style="margin: 5px; color: white ; font-size: xxx-large; font-family: cursive; font-variant: initial; font-style: underline; text-align: center; ">Travel Lounge</p>
+                            
+                        </div>
+
+                    </div>
+                </div>
+                <div id="map" style="margin: 5px; width: 100%; height: 80%;"></div>
+            </div>
+
+
+            <script>
+                var map;
+                const myLatLng = { lat: 25.097416, lng: 55.173439 };
+
+            function initMap() {
+                 map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 25.2048, lng: 55.2708 },
+                    scrollwheel: false,
+                    zoom: 11
+                });
+
+                // The marker, positioned at Uluru
+                const marker = new google.maps.Marker({
+                    position: { lat: 25.097416, lng: 55.173439 },
+                    map: map,
+                    title:""
+                });
+
+                const marker1 = new google.maps.Marker({
+                    position: { lat: 25.197416, lng: 55.273439 },
+                    map: map,
+                    title:""
+                });
+            }
+
+            function redirect(){
+                window.location = "travel.html"
+            }
+            </script>
+            <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+            <script
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCxHQn6QtiTjuG1gqCg68l-w65Aoruji3Q
+              &callback=initMap&v=weekly"
+              async
+            >
+        </script>
+         </body>
+    </head>
+</html>
